@@ -1,0 +1,20 @@
+{
+  "name": "react-and-three",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^0.13.3",
+    "three": "^0.71.0"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^1.6.1",
+    "webpack": "^1.11.0",
+    "webpack-dev-server": "^1.10.1"
+  }
+}
