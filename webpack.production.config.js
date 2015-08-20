@@ -3,7 +3,7 @@ var path                 = require('path'),
     HtmlWebpackPlugin    = require('html-webpack-plugin');
 
 module.exports = {
-  entry  : [path.resolve(__dirname, 'demo/main.js')],
+  entry  : [path.resolve(__dirname, 'app/main.js')],
   resolve : {
     alias : {
     }
@@ -36,8 +36,8 @@ module.exports = {
   },
   plugins : [
     new HtmlWebpackPlugin({
-      title    : 'Delaunay Demo',
-      template : './demo/index.html',
+      title    : 'React and Three',
+      template : './app/index.html',
       inject   : 'body'
     })
   ]

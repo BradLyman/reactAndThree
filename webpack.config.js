@@ -3,7 +3,7 @@ var path                 = require('path'),
     HtmlWebpackPlugin    = require('html-webpack-plugin');
 
 module.exports = {
-  entry  : ['webpack/hot/dev-server', path.resolve(__dirname, 'demo/main.js')],
+  entry  : ['webpack/hot/dev-server', path.resolve(__dirname, 'app/main.js')],
   resolve : {
     alias : {
     }
@@ -14,6 +14,9 @@ module.exports = {
   },
   module : {
     loaders : [{
+        test   : /\.jsx?$/,
+        loader : 'babel'
+      }, {
         test   : /\.css$/,
         loader : 'style!css'
       }, {
@@ -36,8 +39,8 @@ module.exports = {
   },
   plugins : [
     new HtmlWebpackPlugin({
-      title    : 'Delaunay Demo',
-      template : './demo/devIndex.html',
+      title    : 'React and Three',
+      template : './app/devIndex.html',
       inject   : 'body'
     })
   ]
