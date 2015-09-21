@@ -19,12 +19,21 @@ var AppHeader = React.createClass({
     var menuItems = [
       {route : 'about', text : 'About'}
     ];
-    var appBar = <AppBar title="Stuff"
-                         onLeftIconButtonTouchTap={this._onLeftButtonTouchTap} />;
+
+    var appBar = <AppBar
+      title="Stuff"
+      onLeftIconButtonTouchTap={this._onLeftButtonTouchTap} />;
+
     return (
       <div>
         {appBar}
-        <LeftNav ref="leftNav" menuItems={menuItems} docked={false} header={appBar}/>
+        <LeftNav ref="leftNav"
+                 menuItems={menuItems}
+                 docked={false}
+                 header={appBar}/>
+        <div>
+          {this.props.children}
+        </div>
       </div>
     );
   },
