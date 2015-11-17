@@ -76,7 +76,9 @@
           <p>Scene</p>
           <canvas
             style={{ minWidth : '100%',
-                     maxWidth : '100%' }}
+                     maxWidth : '100%',
+                     minHeight : '50vh',
+                     maxHeight : '51vh'}}
             ref="canvas" />
         </div>
       );

@@ -4,16 +4,12 @@ let Three = require('three');
  * The mixin expects the component to define two methods,
  * onResize, and updateScene.
  * The mixin provides four properties:
- *     renderer, canvasWidth, canvasHeight, aspect.
+ *     renderer, canvasWidth, canvasHeight.
  * The renderer is the webgl renderer.
  * The canvasWidth/Height is the current width and height
  *   of the webgl canvas.
- * The aspect is the aspect ratio of the canvas, this is
- *   enforced by javascript when the screen is resized.
  **/
 module.exports = {
-  //---- Public Members ----//
-  aspect : 4/3,
 
   //---- Lifecycle Methods ----//
   componentWillUnmount : function() {
@@ -58,16 +54,7 @@ module.exports = {
     requestAnimationFrame(this._updateScene);
   },
 
-  _updateAspect : function() {
-    let canvas = this.refs.canvas;
-    let computed = window.getComputedStyle(canvas);
-    let w = parseFloat(computed.width);
-    let h = (w / this.aspect) + 'px';
-    canvas.style.height = h;
-  },
-
   _updateCanvasSize : function() {
-    this._updateAspect();
     let canvas        = this.refs.canvas;
     let computed      = window.getComputedStyle(canvas);
     this.canvasWidth  = parseFloat(computed.width);
